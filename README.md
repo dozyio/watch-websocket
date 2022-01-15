@@ -10,7 +10,7 @@ There are probably better solutions but I needed something lightweight without
 using webpack.
 
 The file watcher runs on the current working directory and the websocket on
-ws://127.0.0.1/ws
+**ws://127.0.0.1:12345/ws**
 
 ## Install
     git clone https://github.com/dozyio/watch-websocket
