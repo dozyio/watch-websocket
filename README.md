@@ -35,6 +35,10 @@ Sample javascript client
         socket.send('!');
     }
 
+    function reload() {
+        window.location.reload(true);
+    }
+
     socket.onopen = function(event) {
         console.log('WS Connected');
         wsHeartbeat();
@@ -44,7 +48,9 @@ Sample javascript client
     socket.onmessage = function(event) {
         console.log(`WS message ${event.data}`);
         if (event.data === 'reload') {
-            window.location.reload(true);
+            // Add a small delay to allow files to save and other processes
+            // to run (i.e. tailwind JIT)
+            setTimeout(reload, 200);
         }
     };
 
